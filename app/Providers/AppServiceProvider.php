@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Routing\UrlGenerator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,10 +12,15 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+     
+    // 常時SSL化の設定
+    public function boot(UrlGenerator $url)
     {
         \Schema::defaultStringLength(191);
+          // 常時SSL化の設定
+        $url->forceScheme('https'); 
     }
+
 
     /**
      * Register any application services.
