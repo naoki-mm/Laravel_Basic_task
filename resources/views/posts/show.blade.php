@@ -18,7 +18,7 @@
             </div>
             <div class="card-footer">
                 <span class="mr-2">
-                    投 稿 日 時 {{ $post->body }}
+                    投 稿 日 時 {{ $post->created_at }}
                 </span>
                 
             </div>
